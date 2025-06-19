@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #fff3e0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #212529;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+            padding-left: 10px;
+            transition: 0.3s;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .marquee-box {
+            background-color: #d1e7dd;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body>
+   
+        <div class="content w-100">
+            <div class="marquee-box">
+                <marquee behavior="scroll" direction="left" scrollamount="8" class="text-success fw-bold">
+                    🎓 Welcome to the Student Management Dashboard - Add, View, and Track Student Records with Ease! 🔐
+                </marquee>
+            </div>
+
+            <h2 class="text-primary">Dashboard Overview</h2>
+            <p class="text-muted">This system is designed to streamline student data management with easy-to-use features:</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card p-3">
+                        <h5>👨‍🎓 Add New Student</h5>
+                        <p>Add student details securely and efficiently with validation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card p-3">
+                        <h5>📋 View Student Records</h5>
+                        <p>Quickly access all student data in a neat tabular format.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card p-3">
+                        <h5>📝 Manage Reports</h5>
+                        <p>Create and monitor academic reports of each student.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card p-3">
+                        <h5>🔐 Login System</h5>
+                        <p>Authenticate users with secure login and registration forms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card p-3">
+                        <h5>✅ Toast Notifications</h5>
+                        <p>Get instant feedback after every action through animated toasts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="/back" class="btn btn-secondary mt-3"><i class="bi bi-arrow-left-circle"></i> Back to Admin Panel</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
