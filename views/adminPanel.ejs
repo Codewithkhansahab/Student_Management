@@ -57,6 +57,17 @@
   z-index: -1;
 }
 
+  .custom-toast {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  min-width: 320px;
+}
+.toast-body {
+  font-size: 1rem;
+  font-weight: 500;
+}
   </style>
 </head>
 
@@ -70,12 +81,12 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <h3>🎓 Admin Panel</h3>
-      <a href="/dashboard">🏠 Dashboard</a>
-      <a href="/giveadd">➕ Add Student</a>
-      <a href="/givelist">📋 View Students</a>
-      <a href="/addReport">📤 Add Report</a>
-      <a href="/showReports">📄 Show Reports</a>
-      <a href="/logout">🚪 Logout</a>
+      <a href="/dashboard" class="btn btn-outline-secondary">🏠 Dashboard</a>
+      <a href="/giveadd" class="btn btn-outline-success">➕ Add Student</a>
+      <a href="/givelist" class="btn btn-outline-secondary">📋 View Students</a>
+      <a href="/addReport" class="btn btn-outline-success">📤 Add Report</a>
+      <a href="/showReports"class="btn btn-outline-secondary">📄 Show Reports</a>
+      <a href="/logout" class="btn btn-danger">🚪 Logout</a>
     </div>
 
     <!-- Main Content -->
@@ -105,6 +116,48 @@
 
     </div>
   </div>
+  <% if (toast === 'loginsuccess' || toast === 'deleted' || toast === 'submitted' || toast === 'added' || toast === 'updated') { %>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+  <div id="adminToast" class="toast custom-toast" role="alert" aria-live="assertive" aria-atomic="true"
+    data-bs-delay="3000" data-bs-autohide="true">
+    <div class="d-flex align-items-center px-3 py-2">
+      <div class="toast-body">
+        <% if (toast === 'loginsuccess') { %>
+          ✅ Login successfully!
+        <% } else if (toast === 'deleted') { %>
+          🗑️ Student deleted successfully!
+        <% } else if (toast === 'submitted') { %>
+          📤 Report submitted successfully!
+          <% } else if (toast === 'added') { %>
+         ➕ Student Added successfully!
+          <% } else if (toast === 'updated') { %>
+           Student updated successfully!
+        <% } %>
+      </div>
+      <button type="button" class="btn-close btn-close-white ms-3" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+<% } %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  window.addEventListener('load', () => {
+    const toastEl = document.getElementById('adminToast');
+    if (toastEl) {
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    }
+  });
+
+
+
+      // Clean the URL
+      if (window.location.search.includes("toast=loginsuccess" ||  "toast === submitted" || "toast === submitted")) {
+        const newUrl = window.location.origin + window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+      }
+  </script>
 </body>
 
 </html>
