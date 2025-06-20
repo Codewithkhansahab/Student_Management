@@ -1,19 +1,22 @@
-import mysql, { createConnection } from 'mysql2';
+import mysql from "mysql2";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = createConnection({
-    host : process.env.HOST,
-    user :process.env.USER,
-    password :process.env.PASSWORD,
-    database : process.env.DATABASE
-})
-db.connect(err=>{
-    if(err)
-        throw err
-    else{
-        console.log("Database Connected successfully !!")
-    }
-})
+
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
+
+db.connect((err) => {
+  if (err) {
+    console.error("❌ Database connection failed: ", err.message);
+  } else {
+    console.log("✅ Railway Database Connected Successfully!");
+  }
+});
+
 export default db;
