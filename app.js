@@ -4,6 +4,8 @@ import authRoutes from './routes/authRoutes.js';
 import studentRoutes from './routes/studentRoutes.js';
 import reportRoutes from './routes/reportRoutes.js';
 import sortRoutes from './routes/sortRoutes.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
